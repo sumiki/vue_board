@@ -32,9 +32,9 @@ export default {
       ],
       cards: [
         ['default card a1', 'default card a2'],
-        ['default card a2'],
-        ['default card a3'],
-        ['default card a4']
+        ['default card b2'],
+        ['default card c3'],
+        ['default card d4']
       ]
     }
   },
