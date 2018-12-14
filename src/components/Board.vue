@@ -60,37 +60,37 @@ export default {
       e.preventDefault()
       var new_card = window.prompt('Add new card')
       if( new_card && new_card.replace(' ', '') !== '' ){
-        this.$data.cards[index].push( new_card )
+        this.cards[index].push( new_card )
       }
     },
     add_card_dialog: function(e, index){
-      this.$data.showDialog = true
-      this.$data.showDialogColumn = index
+      this.showDialog = true
+      this.showDialogColumn = index
     },
     moveLeft: function(e, column_index, card_index){
       e.preventDefault()
-      var move_card_value = this.$data.cards[column_index][card_index]
-      this.$data.cards[column_index].splice(card_index, 1)
-      this.$data.cards[column_index - 1].push( move_card_value )
+      var move_card_value = this.cards[column_index][card_index]
+      this.cards[column_index].splice(card_index, 1)
+      this.cards[column_index - 1].push( move_card_value )
     },
     moveRight: function(e, column_index, card_index){
       e.preventDefault()
-      var move_card_value = this.$data.cards[column_index][card_index]
-      this.$data.cards[column_index].splice(card_index, 1)
-      this.$data.cards[column_index + 1].push( move_card_value )
+      var move_card_value = this.cards[column_index][card_index]
+      this.cards[column_index].splice(card_index, 1)
+      this.cards[column_index + 1].push( move_card_value )
     },
     handleCloseDialog: function(e){
       if(e){
         e.preventDefault()
       }
-      this.$data.showDialog = false;
-      this.$data.showDialogColumn = null;
-      this.$data.new_card = '';
+      this.showDialog = false;
+      this.showDialogColumn = null;
+      this.new_card = '';
     },
     handleSaveDialog: function(e){
-      var new_card = this.$data.new_card
+      var new_card = this.new_card
       if( new_card && new_card.replace(' ', '') !== '' ){
-        this.$data.cards[ this.$data.showDialogColumn ].push( new_card )
+        this.cards[ this.showDialogColumn ].push( new_card )
       }
       this.handleCloseDialog(e)
     }
